@@ -1,18 +1,15 @@
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
+from cleaner import clean_corpus
 
 chatbot = ChatBot("Chatpot")
 trainer = ListTrainer(chatbot)
+CORPUS_FILE = "chat-demo.txt"
 
-trainer.train([
-    "Hi",
-    "Welcome, friend 🤗",
-])
+cleaned_corpus = clean_corpus(CORPUS_FILE)
 
-trainer.train([
-    "Are you a plant?",
-    "No, I'm the pot below the plant!",
-])
+trainer.train(cleaned_corpus)
+
 exit_conditions = (":q", "quit", "exit")
 
 print("Hello I'm Mathbot")
