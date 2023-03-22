@@ -2,9 +2,9 @@ from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
 from cleaner import clean_corpus
 
+CORPUS_FILE = "chat.txt"
 chatbot = ChatBot("Chatpot")
 trainer = ListTrainer(chatbot)
-CORPUS_FILE = "chat-demo.txt"
 
 cleaned_corpus = clean_corpus(CORPUS_FILE)
 
@@ -16,7 +16,6 @@ print("Hello I'm Mathbot")
 print("There is something that can I help you?")
 while True:
     query = input("> ")
-
     if query in exit_conditions:
         break
     else:
