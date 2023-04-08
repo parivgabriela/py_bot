@@ -1,0 +1,19 @@
+paths:
+  /questions:
+    get:
+      operationId: "question.read_all"
+      tags:
+        - "Question"
+      summary: "Return all questions history"
+      responses:
+        "200":
+          description: "Successfully questions list"
+  /question:
+    post:
+      operationId: "question.new_question"
+      tags:
+        - "Question"
+      summary: "Ask a question"
+      responses:
+        "200":
+          description: "Successfully questions response"
